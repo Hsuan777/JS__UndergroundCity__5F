@@ -7,7 +7,43 @@
   <title>JS地下城|5F|全台空氣指標</title>
 </head>
 <body>
-  <h1>Hello!</h1>
+  
+  <main class="container mt-3">
+    <div class="row">
+      <div class="col-4">
+        <div class="d-flex flex-column justify-content-between  h-100">
+          <h2 class="fw-bolder text-center">空氣品質指標( AQI )</h2>
+          <select name="" id="" class="form-select">
+            <option selected>請選擇地區</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-8">
+        <table class="table align-middle text-center mb-0">
+          <tbody>
+            <tr>
+              <th class="table-success">0~50</th>
+              <th>51～100</th>
+              <th>101～150</th>
+              <th>151～200</th>
+              <th>201～300</th>
+              <th>301～400</th>
+            </tr>
+            <tr>
+              <td>良好</td>
+              <td>普通</td>
+              <td>對敏感族群<br>不健康</td>
+              <td>對所有族群<br>不健康</td>
+              <td>非常不健康</td>
+              <td>危害</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row"></div>
+  </main>
+
   <script src="js/all.js"></script>
 </body>
 </html>
