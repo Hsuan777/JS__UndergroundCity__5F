@@ -9,7 +9,8 @@
 <body>
   
   <main class="container mt-3">
-    <div class="row mb-3">
+    <!-- 選擇地區與說明 -->
+    <div class="row g-4 mb-3">
       <div class="col-4">
         <div class="d-flex flex-column justify-content-between  h-100">
           <h2 class="fw-bolder">空氣品質指標( AQI )</h2>
@@ -19,60 +20,79 @@
         </div>
       </div>
       <div class="col-8">
-        <table class="table align-middle text-center mb-0">
+        <table class="table align-middle text-center table-bordered border-dark mb-0">
           <tbody>
             <tr>
-              <th class="table-success">0~50</th>
-              <th>51～100</th>
-              <th>101～150</th>
-              <th>151～200</th>
-              <th>201～300</th>
-              <th>301～400</th>
+              <th class="table-success border-dark">0~50</th>
+              <th class="table-ordinary border-dark">51～100</th>
+              <th class="table-wraning border-dark">101～150</th>
+              <th class="table-danger border-dark">151～200</th>
+              <th class="table-hazard border-dark">201～300</th>
+              <th class="table-peril border-dark">301～400</th>
             </tr>
             <tr>
-              <td>良好</td>
-              <td>普通</td>
-              <td>對敏感族群<br>不健康</td>
-              <td>對所有族群<br>不健康</td>
-              <td>非常不健康</td>
-              <td>危害</td>
+              <td class="fw-bolder">良好</td>
+              <td class="fw-bolder">普通</td>
+              <td class="fw-bolder">對敏感族群<br>不健康</td>
+              <td class="fw-bolder">對所有族群<br>不健康</td>
+              <td class="fw-bolder">非常不健康</td>
+              <td class="fw-bolder">危害</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <div class="row">
-      <div class="d-flex justify-content-between align-items-center">
-        <h3 class="fw-bolder">高雄市</h3>
-        <span class="custom--dottedLine mx-n3"></span>
-        <span>2019-01-24 14:00 更新</span>
+    <!-- 縣市標題與分隔線 -->
+    <div class="row my-4">
+      <div class="col">
+        <div class="d-flex justify-content-between align-items-center">
+          <h3 class="fw-bolder">高雄市</h3>
+          <span class="custom--dottedLine mx-n3"></span>
+          <span>2021-01-01 16:00 更新</span>
+        </div>
       </div>
     </div>
-    <div class="row">
+    <!-- 地區資訊 -->
+    <div class="row g-4">
       <div class="col-4">
-        <div class="d-flex">
-          <h3 class="border border-dark p-4">前金區</h3>
-          <h3 class="border border-dark p-4">150</h3>
-        </div>   
-        <ul class="list-group">
-          <li class="list-group-item"> <h4 class="d-inline fw-bolder">臭氧</h4> <span>O3 (ppb)</span></li>
-          <li class="list-group-item"> <h4 class="d-inline fw-bolder">懸浮微粒</h4> <span>PM10 (μg/m³)</span></li>
-          <li class="list-group-item"> <h4 class="d-inline fw-bolder">細懸浮微粒</h4> <span>PM2.5 (μg/m³)</span></li>
-          <li class="list-group-item"> <h4 class="d-inline fw-bolder">一氧化碳</h4> <span>CO (ppm)</span></li>
-          <li class="list-group-item"> <h4 class="d-inline fw-bolder">二氧化硫</h4> <span>SO2 (ppb)</span></li>
-          <li class="list-group-item"> <h4 class="d-inline fw-bolder">二氧化氮</h4> <span>NO2 (ppb)</span></li>
-        </ul>
+        <div class="row justify-content-center align-items-center border border-dark border-4">
+          <div class="col-7 text-center">
+            <span class="h2 fw-bolder">前金區</span>
+          </div>
+          <div class="col-5 py-4 border-start border-dark border-3 text-center">
+            <sapn class="display-6 py-4 fw-bolder">150</sapn>
+          </div>
+          <div class="col px-0">
+            <ul class="list-group list-group-flush border-top border-dark border-4 px-3">
+              <li class="list-group-item border-dark py-3"> <h4 class="d-inline fw-bolder">臭氧</h4> <span>O3 (ppb)</span></li>
+              <li class="list-group-item border-dark py-3"> <h4 class="d-inline fw-bolder">懸浮微粒</h4> <span>PM10 (μg/m³)</span></li>
+              <li class="list-group-item border-dark py-3"> <h4 class="d-inline fw-bolder">細懸浮微粒</h4> <span>PM2.5 (μg/m³)</span></li>
+              <li class="list-group-item border-dark py-3"> <h4 class="d-inline fw-bolder">一氧化碳</h4> <span>CO (ppm)</span></li>
+              <li class="list-group-item border-dark py-3"> <h4 class="d-inline fw-bolder">二氧化硫</h4> <span>SO2 (ppb)</span></li>
+              <li class="list-group-item border-dark py-3"> <h4 class="d-inline fw-bolder">二氧化氮</h4> <span>NO2 (ppb)</span></li>
+            </ul>
+          </div>
+        </div>  
+        
       </div>
       <div class="col-4">
-        <div class="d-flex">
-          <h3 class="border border-dark p-4">前金區</h3>
-          <h3 class="border border-dark p-4">150</h3>
+        <div class="row justify-content-center align-items-center border border-dark border-4">
+          <div class="col-7 text-center">
+            <span class="h2 fw-bolder">前金區</span>
+          </div>
+          <div class="col-5 py-4 border-start border-dark border-3 text-center">
+            <sapn class="display-6 py-4 fw-bolder">150</sapn>
+          </div>
         </div>
       </div>
       <div class="col-4">
-        <div class="d-flex">
-          <h3 class="border border-dark p-4">復興</h3>
-          <h3 class="border border-dark p-4">150</h3>
+        <div class="row justify-content-center align-items-center border border-dark border-4">
+          <div class="col-7 text-center">
+            <span class="h2 fw-bolder">前金區</span>
+          </div>
+          <div class="col-5 py-4 border-start border-dark border-3 text-center">
+            <sapn class="display-6 py-4 fw-bolder">150</sapn>
+          </div>
         </div>
       </div>
     </div>
