@@ -29,6 +29,21 @@ const searchAir = function() {
     })
     areasOptions.innerHTML = areasStr
   }
+  this.colorFn = (num) => {
+    if ( num >=0 && num <=50 ) {
+      return 'bg-success'
+    } else if ( num >=51 && num <=100 ) {
+      return 'bg-ordinary'
+    } else if ( num >= 101 && num <= 150 ) {
+      return 'bg-wraning'
+    } else if ( num >= 151 && num <= 200 ) {
+      return 'bg-danger'
+    } else if ( num >= 201 && num <= 300 ) {
+      return 'bg-hazard'
+    } else if ( num >= 301 && num <= 400 ) {
+      return 'bg-peril'
+    } 
+  } 
   this.changeFn = (e) => {
     let sitesAry = []
     let sitesStr = ''
@@ -45,7 +60,7 @@ const searchAir = function() {
           <div class="col-7 text-center">
             <span class="h2 fw-bolder">${item.SiteName}</span>
           </div>
-          <div class="col-5 py-4 border-start border-dark border-3 text-center">
+          <div class="col-5 py-4 border-start border-dark border-3 text-center ${vm.colorFn(Number(item.AQI))}">
             <sapn class="display-6 py-4 fw-bolder">${item.AQI}</sapn>
           </div>
         </div>
