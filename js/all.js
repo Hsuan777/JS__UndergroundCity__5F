@@ -82,16 +82,16 @@ const searchAir = function() {
     </div>`
     sitesAry.forEach( item => {
       sitesOtherStr += `
-      <div class="col-6">
+      <li class="col-6">
         <a href="#" class="js-siteLink row justify-content-center align-items-center border border-dark border-4 text-decoration-none text-reset">
           <div class="col-7 text-center">
-            <span class="h2 fw-bolder">${item.SiteName}</span>
+            <span class="h2 fw-bolder p-5">${item.SiteName}</span>
           </div>
           <div class="col-5 py-4 border-start border-dark border-3 text-center ${vm.colorFn(Number(item.AQI))}">
             <span class="display-6 py-4 fw-bolder">${item.AQI}</span>
           </div>
         </a>
-      </div>`
+      </li>`
     })
     sitesAry.push(siteFirst)
     siteDetail.innerHTML = siteDetailStr
@@ -107,12 +107,15 @@ const searchAir = function() {
     })
     vm.render(e.target.value)
   }
-  // this.clickSite = () => {
-    
-  // }
-  // this.addEventFn = (e) => {
-    
-  // }
+  this.clickSite = () => {
+    console.log(1)
+  }
+  this.addEventFn = () => {
+    let siteLink = document.querySelectorAll('.js-siteLink')
+    siteLink.forEach(item => {
+      item.onclick = vm.clickSite()
+    })
+  }
   vm.getData()
 }
 const searchAirFn = new searchAir()
