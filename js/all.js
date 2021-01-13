@@ -37,7 +37,7 @@ const searchAir = function() {
     } else if ( num >=51 && num <=100 ) {
       return 'bg-ordinary'
     } else if ( num >= 101 && num <= 150 ) {
-      return 'bg-wraning'
+      return 'bg-warning'
     } else if ( num >= 151 && num <= 200 ) {
       return 'bg-danger'
     } else if ( num >= 201 && num <= 300 ) {
@@ -56,7 +56,7 @@ const searchAir = function() {
       <span class="h2 fw-bolder">${siteFirst.SiteName}</span>
     </div>
     <div class="col-5 py-4 border-start border-dark border-3 text-center ${vm.colorFn(Number(siteFirst.AQI))}">
-      <sapn class="display-6 py-4 fw-bolder">${siteFirst.AQI}</sapn>
+      <span class="display-6 py-4 fw-bolder">${siteFirst.AQI}</span>
     </div>
     <div class="col px-0">
       <ul class="list-group list-group-flush border-top border-dark border-4 px-3">
@@ -88,7 +88,7 @@ const searchAir = function() {
             <span class="h2 fw-bolder">${item.SiteName}</span>
           </div>
           <div class="col-5 py-4 border-start border-dark border-3 text-center ${vm.colorFn(Number(item.AQI))}">
-            <sapn class="display-6 py-4 fw-bolder">${item.AQI}</sapn>
+            <span class="display-6 py-4 fw-bolder">${item.AQI}</span>
           </div>
         </a>
       </div>`
