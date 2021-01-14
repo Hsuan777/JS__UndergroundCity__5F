@@ -43,7 +43,7 @@ const searchAir = function() {
     } else if ( num >=51 && num <=100 ) {
       return 'bg-ordinary'
     } else if ( num >= 101 && num <= 150 ) {
-      return 'bg-wraning'
+      return 'bg-warning'
     } else if ( num >= 151 && num <= 200 ) {
       return 'bg-danger'
     } else if ( num >= 201 && num <= 300 ) {
