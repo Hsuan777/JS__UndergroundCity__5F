@@ -53,14 +53,18 @@ const searchAir = function() {
     } 
   } 
   this.loadingFn = (loading) => {
-    if (loading === true) {
-      for (let i=1; i<8; i++){
-        setTimeout(()=>{
-          dottedLine.style.width = `${i}0%`
-        }, 500*i)
-      }
+    let x = 1
+    if (loading) {
+      setInterval(()=>{
+        if (x <= 7) {
+          dottedLine.style.width = `${x++}2%`
+        } else {
+          x = 1
+        }
+      }, 500)
     } else {
-      dottedLine.style.width = `72%`
+      clearInterval(x) 
+      dottedLine.style.width = `62%`     
     }
     
   }
