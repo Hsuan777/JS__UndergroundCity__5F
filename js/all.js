@@ -74,33 +74,35 @@ const searchAir = function() {
     let siteFirst = sitesAry.shift()
     area.textContent = areaName
     siteDetailStr = `
-    <div class="col-7 text-center">
-      <span class="h2 fw-bolder">${siteFirst.SiteName}</span>
-    </div>
-    <div class="col-5 py-4 border-start border-dark border-3 text-center ${vm.colorFn(Number(siteFirst.AQI))}">
-      <sapn class="display-6 py-4 fw-bolder">${siteFirst.AQI}</sapn>
-    </div>
-    <div class="col px-0">
-      <ul class="list-group list-group-flush border-top border-dark border-4 px-3">
-        <li class="list-group-item d-flex justify-content-between border-dark py-3"> 
-          <h4 class="d-inline fw-bolder mb-0">臭氧 <span>O3 (ppb)</span></h4> 
-          <span class="h4 fw-weight mb-0">${siteFirst.O3}</span></li>
-        <li class="list-group-item d-flex justify-content-between border-dark py-3"> 
-          <h4 class="d-inline fw-bolder mb-0">懸浮微粒 <span>PM10 (μg/m³)</span></h4> 
-          <span class="h4 fw-weight mb-0">${siteFirst.PM10}</span></li>
-        <li class="list-group-item d-flex justify-content-between border-dark py-3"> 
-          <h4 class="d-inline fw-bolder mb-0">細懸浮微粒 <span>PM2.5 (μg/m³)</span></h4> 
-          <span class="h4 fw-weight mb-0">${siteFirst["PM2.5"]}</span></li>
-        <li class="list-group-item d-flex justify-content-between border-dark py-3"> 
-          <h4 class="d-inline fw-bolder mb-0">一氧化碳 <span>CO (ppm)</span></h4> 
-          <span class="h4 fw-weight mb-0">${siteFirst.CO}</span></li>
-        <li class="list-group-item d-flex justify-content-between border-dark py-3"> 
-          <h4 class="d-inline fw-bolder mb-0">二氧化硫 <span>SO2 (ppb)</span></h4> 
-          <span class="h4 fw-weight mb-0">${siteFirst.SO2}</span></li>
-        <li class="list-group-item d-flex justify-content-between border-dark py-3"> 
-          <h4 class="d-inline fw-bolder mb-0">二氧化氮 <span>NO2 (ppb)</span></h4> 
-          <span class="h4 fw-weight mb-0">${siteFirst.NO2}</span></li>
-      </ul>
+    <div class="row justify-content-center align-items-center border border-dark border-4">
+      <div class="col-7 text-center">
+        <span class="h2 fw-bolder">${siteFirst.SiteName}</span>
+      </div>
+      <div class="col-5 py-4 border-start border-dark border-3 text-center ${vm.colorFn(Number(siteFirst.AQI))}">
+        <span class="display-6 py-4 fw-bolder">${siteFirst.AQI}</span>
+      </div>
+      <div class="col px-0">
+        <ul class="list-group list-group-flush border-top border-dark border-4 px-3">
+          <li class="list-group-item d-flex justify-content-between border-dark py-3"> 
+            <h4 class="d-inline fw-bolder mb-0">臭氧 <span>O3 (ppb)</span></h4> 
+            <span class="h4 fw-weight mb-0">${siteFirst.O3}</span></li>
+          <li class="list-group-item d-flex justify-content-between border-dark py-3"> 
+            <h4 class="d-inline fw-bolder mb-0">懸浮微粒 <span>PM10 (μg/m³)</span></h4> 
+            <span class="h4 fw-weight mb-0">${siteFirst.PM10}</span></li>
+          <li class="list-group-item d-flex justify-content-between border-dark py-3"> 
+            <h4 class="d-inline fw-bolder mb-0">細懸浮微粒 <span>PM2.5 (μg/m³)</span></h4> 
+            <span class="h4 fw-weight mb-0">${siteFirst["PM2.5"]}</span></li>
+          <li class="list-group-item d-flex justify-content-between border-dark py-3"> 
+            <h4 class="d-inline fw-bolder mb-0">一氧化碳 <span>CO (ppm)</span></h4> 
+            <span class="h4 fw-weight mb-0">${siteFirst.CO}</span></li>
+          <li class="list-group-item d-flex justify-content-between border-dark py-3"> 
+            <h4 class="d-inline fw-bolder mb-0">二氧化硫 <span>SO2 (ppb)</span></h4> 
+            <span class="h4 fw-weight mb-0">${siteFirst.SO2}</span></li>
+          <li class="list-group-item d-flex justify-content-between border-dark py-3"> 
+            <h4 class="d-inline fw-bolder mb-0">二氧化氮 <span>NO2 (ppb)</span></h4> 
+            <span class="h4 fw-weight mb-0">${siteFirst.NO2}</span></li>
+        </ul>
+      </div>
     </div>`
     sitesAry.forEach( item => {
       sitesOtherStr += `
