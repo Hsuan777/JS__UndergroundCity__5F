@@ -82,20 +82,21 @@ const searchAir = function() {
     </div>`
     sitesAry.forEach( item => {
       sitesOtherStr += `
-      <div class="col-6">
-        <a href="#" class="js-siteLink row justify-content-center align-items-center border border-dark border-4 text-decoration-none text-reset">
+      <li class="js-siteLink col-6">
+        <a href="#" value="${item.SiteName}" class="row justify-content-center align-items-center border border-dark border-4 text-decoration-none text-reset">
           <div class="col-7 text-center">
             <span class="h2 fw-bolder">${item.SiteName}</span>
           </div>
           <div class="col-5 py-4 border-start border-dark border-3 text-center ${vm.colorFn(Number(item.AQI))}">
-            <sapn class="display-6 py-4 fw-bolder">${item.AQI}</sapn>
+            <span class="display-6 py-4 fw-bolder">${item.AQI}</span>
           </div>
         </a>
-      </div>`
+      </li>`
     })
     sitesAry.push(siteFirst)
     siteDetail.innerHTML = siteDetailStr
     siteOther.innerHTML = sitesOtherStr
+    vm.addEventFn()
   }
 
   this.changeFn = (e) => {
@@ -106,17 +107,34 @@ const searchAir = function() {
       }
     })
     vm.render(e.target.value)
+    vm.addEventFn()
   }
-  // this.clickSite = () => {
-    
-  // }
-  // this.addEventFn = (e) => {
-    
-  // }
+  this.clickSite = (e) => {
+    e.preventDefault()
+    let newArray = []
+    if (e.target.tagName === 'SPAN' ) {
+      temp = e.target.parentElement.parentElement.attributes.value.nodeValue
+    } else if (e.target.tagName ==='DIV') {
+      temp = e.target.parentElement.attributes.value.nodeValue
+    } else if (e.target.tagName === 'A') {
+      temp = e.target.attributes.value.nodeValue
+    }
+    let firstSite = sitesAry.filter(item => item.SiteName === temp )
+    let otherSite = sitesAry.filter(item => item.SiteName !== temp )
+    newArray.push(...firstSite, ...otherSite)
+    sitesAry = newArray
+    vm.render(area.textContent)
+  }
+  this.addEventFn = () => {
+    let siteLink = document.querySelectorAll('.js-siteLink')
+    siteLink.forEach(item=>{
+      item.addEventListener('click', vm.clickSite)
+    })
+  }
   vm.getData()
 }
 const searchAirFn = new searchAir()
 
 // 監聽選單
 areasOptions.addEventListener('change', searchAirFn.changeFn)
-siteOther.addEventListener('click', searchAirFn.addEventFn)
+// siteOther.addEventListener('click', searchAirFn.addEventFn)
