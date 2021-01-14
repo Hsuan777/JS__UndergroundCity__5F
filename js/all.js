@@ -1,6 +1,8 @@
 const googleScript = `https://script.googleusercontent.com/macros/echo?user_content_key=phrVdYu0Q3XqAxTa4cq72gaVj8KRw8fwK8GkMW8L9IF_WGg8NmQCIVDWpRYBpfh-fXZ7nRVcoyTFky8F32I5fLKI9_cAMlzPm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnIoD3KqIE4zKFslomcrc1HsTxzETLkHyqKpbVKR7SUZ7yF9sZFB2hWkNIdwvNj24Yg3NRYZ4K8s_vJsw0wqpxiI&lib=MsigB4MHVny8Dzc9UZJu-ZrYZRSJ0wUZU`
 const areasOptions = document.querySelector('.js-areas')
 const siteOther = document.querySelector('.js-siteOther')
+const dottedLine = document.querySelector('.custom--dottedLine')
+
 
 const searchAir = function() {
   const area =  document.querySelector('.js-area')
@@ -14,7 +16,9 @@ const searchAir = function() {
   // 站點資料
   let sitesAry = []
   let vm = this
+  area.textContent = '讀取中'
   this.getData = () => {
+    vm.loadingFn(true)
     fetch( googleScript )
     .then( response => {
       return response.json(); 
@@ -28,7 +32,9 @@ const searchAir = function() {
           updateTime.innerHTML = `${item.PublishTime} 更新`
         }
       })
+      vm.loadingFn(false)
       areasOptions.innerHTML = areasStr
+      area.textContent = '請選擇地區'
     })
   }
   this.colorFn = (num) => {
@@ -46,6 +52,18 @@ const searchAir = function() {
       return 'bg-peril'
     } 
   } 
+  this.loadingFn = (loading) => {
+    if (loading === true) {
+      for (let i=1; i<8; i++){
+        setTimeout(()=>{
+          dottedLine.style.width = `${i}0%`
+        }, 500*i)
+      }
+    } else {
+      dottedLine.style.width = `72%`
+    }
+    
+  }
   this.render = (areaName) => {
     let siteDetailStr = ''
     let sitesOtherStr = ''
