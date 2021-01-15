@@ -36,6 +36,10 @@ const searchAir = function() {
       areasOptions.innerHTML = areasStr
       area.textContent = '請選擇地區'
     })
+    .catch( () => {
+      vm.loadingFn(false)
+      area.textContent = '請重新整理畫面'
+    })
   }
   this.colorFn = (num) => {
     if ( num >=0 && num <=50 ) {
